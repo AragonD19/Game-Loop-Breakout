@@ -1,0 +1,3 @@
+/home/david/Documentos/GAME/build/CMakeFiles/GAME.dir
+/home/david/Documentos/GAME/build/CMakeFiles/edit_cache.dir
+/home/david/Documentos/GAME/build/CMakeFiles/rebuild_cache.dir
