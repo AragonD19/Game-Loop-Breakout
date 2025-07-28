@@ -42,6 +42,6 @@ chmod +x run.sh
 
 **Video del juego:**
 
-![Demo del juego]((https://youtu.be/zHB_1_eOeiU))
+[![Watch the video](https://img.youtube.com/vi/zHB_1_eOeiU/0.jpg)](https://youtu.be/zHB_1_eOeiU)
 
 ---
