@@ -40,10 +40,8 @@ chmod +x run.sh
 
 ## 📹 Demostración
 
-Aquí puedes añadir un GIF o video del juego en acción. Sube tu demostración a una plataforma como [Imgur](https://imgur.com/), [Giphy](https://giphy.com/), o YouTube y reemplaza el enlace de abajo:
+**Video del juego:**
 
-**GIF o Video del juego:**
-
-![Demo del juego]([https://tu-enlace-aqui.com/demo.gif](https://youtu.be/zHB_1_eOeiU))
+![Demo del juego]((https://youtu.be/zHB_1_eOeiU))
 
 ---
