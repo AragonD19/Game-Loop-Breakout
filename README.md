@@ -44,6 +44,6 @@ Aquí puedes añadir un GIF o video del juego en acción. Sube tu demostración 
 
 **GIF o Video del juego:**
 
-![Demo del juego](https://tu-enlace-aqui.com/demo.gif)
+![Demo del juego]([https://tu-enlace-aqui.com/demo.gif](https://youtu.be/zHB_1_eOeiU))
 
 ---
