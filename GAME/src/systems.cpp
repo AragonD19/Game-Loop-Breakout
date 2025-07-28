@@ -36,12 +36,12 @@ void systemBallMovement(ECS& ecs, float dt, int screenWidth, int screenHeight, b
 
         pos->x += vel->vx * dt;
         pos->y += vel->vy * dt;
+        
+        if (pos->x <= 0 || pos->x + size->w >= screenWidth)
+            vel->vx = -vel->vx * 1.05f;
 
-        if (pos->x <= 0 || pos->x + size->w >= screenWidth) {
-            std::cout << "*****Pelota tocó borde lateral. Cerrando juego.*****" << std::endl;
-            isRunning = false;
-        }
-
+        if (pos->y <= 0)
+            vel->vy = -vel->vy * 1.05f;
 
         if (pos->y + size->h >= screenHeight) {
             std::cout << "*****Game Over*****" << std::endl;
