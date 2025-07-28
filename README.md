@@ -1,66 +1,49 @@
-# Game-Loop-Breakout
+## 🕹️ Características
 
-Este es un proyecto en C++ usando la biblioteca [raylib](https://www.raylib.com/) que simula un juego clásico tipo **Breakout**. El jugador controla una paleta (paddle) para hacer rebotar una pelota y destruir todos los bloques de la pantalla.
+- Paddle controlado con teclado (izquierda y derecha).
+- Movimiento basado en tiempo (delta time).
+- Pelota que rebota en el paddle, paredes y techo.
+- Aumento progresivo de la velocidad en cada rebote.
+- Colisiones con bloques destructibles.
+- Fin del juego si la pelota toca el límite derecho, izquierdo o inferior.
 
-## 🎮 Características
+---
 
-- Movimiento del paddle con teclado (izquierda/derecha).
-- Pelota que rebota en los bordes, el paddle y los bloques.
-- Eliminación de bloques al ser golpeados.
-- Mensaje de victoria al eliminar todos los bloques.
-- Mensaje de derrota si la pelota toca el fondo.
-- Movimiento basado en tiempo (`delta time`).
-- Paddle limitado a los bordes de la pantalla.
-
-## 🧱 Estructura del proyecto
+## 📁 Estructura del Proyecto
 
 ```
 GAME/
-├── include/
-│   ├── Game.h
-│   └── print.h
-├── src/
-│   └── main.cpp
-├── CMakeLists.txt
-├── run.sh
+├── include/         # Archivos .h (ECS, Game, Systems)
+├── src/             # Archivos .cpp
+├── build/           # Directorio de build
+├── run.sh           # Script para compilar y ejecutar
+├── CMakeLists.txt   # Configuración de CMake
 └── README.md
 ```
 
-## ⚙️ Requisitos
+---
 
-- CMake (versión 3.0+)
-- Compilador C++ con soporte para C++23
-- [raylib](https://github.com/raysan5/raylib) instalado en el sistema
+## 🚀 Compilación y Ejecución
 
-### En Linux
+Requisitos:
+- CMake
+- raylib (puedes instalarlo con tu gestor de paquetes o desde [raylib.com](https://www.raylib.com/))
 
-Puedes instalar raylib con:
-
-```bash
-sudo apt install libraylib-dev
-```
-
-## 🚀 Compilación y ejecución
-
-Desde la raíz del proyecto:
+Para compilar y ejecutar:
 
 ```bash
+chmod +x run.sh
 ./run.sh
 ```
 
-Este script crea el directorio `build/`, ejecuta `cmake`, compila el proyecto y lanza el ejecutable.
+---
 
-## 🎮 Controles
+## 📹 Demostración
 
-- ⬅️ Flecha izquierda: mover el paddle a la izquierda  
-- ➡️ Flecha derecha: mover el paddle a la derecha
+Aquí puedes añadir un GIF o video del juego en acción. Sube tu demostración a una plataforma como [Imgur](https://imgur.com/), [Giphy](https://giphy.com/), o YouTube y reemplaza el enlace de abajo:
 
-## 🏁 Objetivo
+**GIF o Video del juego:**
 
-Haz rebotar la pelota con el paddle para destruir todos los bloques.  
-Pierdes si la pelota toca la parte inferior de la pantalla.  
-¡Ganas si destruyes todos los bloques!
+![Demo del juego](https://tu-enlace-aqui.com/demo.gif)
 
-## 📄 Licencia
-
-Este proyecto es educativo y no tiene licencia específica. Puedes modificarlo y usarlo libremente.
+---
