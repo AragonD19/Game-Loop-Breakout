@@ -13,12 +13,25 @@
 
 ```
 GAME/
-├── include/         # Archivos .h (ECS, Game, Systems)
-├── src/             # Archivos .cpp
-├── build/           # Directorio de build
-├── run.sh           # Script para compilar y ejecutar
-├── CMakeLists.txt   # Configuración de CMake
-└── README.md
+    src/
+        main.cpp
+        systems.cpp
+        Game.cpp
+    src/editor/
+        Editor.cpp  
+    include/
+        Game.h
+        ecs.h
+        systems.h
+        components.h
+        print.h
+    include/editor/
+        Editor.h   
+    external/
+        imgui/      # Clonado de repo
+        rlImGui/    # Clonado de repo
+    build/
+    CMakeLists.txt
 ```
 
 ---
