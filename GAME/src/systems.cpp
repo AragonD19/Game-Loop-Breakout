@@ -36,12 +36,23 @@ void systemBallMovement(ECS& ecs, float dt, int screenWidth, int screenHeight, b
 
         pos->x += vel->vx * dt;
         pos->y += vel->vy * dt;
-        
-        if (pos->x <= 0 || pos->x + size->w >= screenWidth)
-            vel->vx = -vel->vx * 1.05f;
 
-        if (pos->y <= 0)
-            vel->vy = -vel->vy * 1.05f;
+    
+        if (pos->x <= 0) {
+            pos->x = 0;  
+            vel->vx = -vel->vx;
+        } 
+        else if (pos->x + size->w >= screenWidth) {
+            pos->x = screenWidth - size->w;
+            vel->vx = -vel->vx;
+        }
+
+        
+        if (pos->y <= 0) {
+            pos->y = 0;
+            vel->vy = -vel->vy;
+        }
+
 
         if (pos->y + size->h >= screenHeight) {
             std::cout << "*****Game Over*****" << std::endl;

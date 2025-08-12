@@ -1,3 +1,5 @@
+//components.h
+
 #pragma once
 
 struct Position { float x, y; };
