@@ -1,55 +1,31 @@
-## 🕹️ Características
+✨ Características Principales
+Core Engine
 
-- Paddle controlado con teclado (izquierda y derecha).
-- Movimiento basado en tiempo (delta time).
-- Pelota que rebota en el paddle, paredes y techo.
-- Aumento progresivo de la velocidad en cada rebote.
-- Colisiones con bloques destructibles.
-- Fin del juego si la pelota toca el límite derecho, izquierdo o inferior.
+ECS Ligero: Templates para components dinámicos (add/remove/query en O(1)). Soporta queries genéricas para systems (e.g., getAllEntities() para editor).
+Escenas Modulares: Switching dinámico via std::unique_ptr<Scene> (Menu → Breakout → Adventure). Cada escena maneja su ECS propio.
+Editor ImGui Runtime: Pausa/resume, lista de entidades por escena (categorizada por components), inspector para tweak Position/Velocity/Scale (hot-reload vibes).
+Input y Movimiento: Teclado (WASD/arrows), AI patrol simple, clamping borders. Delta-time para 60 FPS estables.
 
----
+Breakout (Escena Clásica)
 
-## 📁 Estructura del Proyecto
+Paddle controlado con teclado (izquierda/derecha).
+Movimiento basado en tiempo (delta time).
+Pelota que rebota en paddle, paredes y techo.
+Aumento progresivo de velocidad en rebotes (1.05x factor).
+Colisiones AABB con bloques destructibles (remueve on-hit).
+Win condition: Todos bloques destruidos. Game Over: Pelota toca bottom.
 
-```
-GAME/
-    src/
-        main.cpp
-        systems.cpp
-        Game.cpp
-    src/editor/
-        Editor.cpp  
-    include/
-        Game.h
-        ecs.h
-        systems.h
-        components.h
-        print.h
-    include/editor/
-        Editor.h   
-    external/
-        imgui/      # Clonado de repo
-        rlImGui/    # Clonado de repo
-    build/
-    CMakeLists.txt
-```
+Sprites y Rendering (Engine Highlight)
 
----
+Sprites Híbridos: Struct Sprite soporta sheets (DrawTextureRec con frames) y separate textures (DrawTextureEx). Incluye tint, origin, y escala Vector2 tweakable (default 1x, e.g., 16x16 → 64x64 para visibilidad en 800x600).
+Animaciones Estatales: Component Animation con modos Sheet/Separate. Estados como "idle", "walk_left/right" via std::unordered_map<std::string, std::vector<Rectangle/Texture2D>>. Frame timing (0.15s default), loop suave.
+Render System: systemRenderSprites usa Raylib's DrawTexturePro/Ex para scale/rotation (GPU-accelerated, zero overhead). Prioriza entities con Position + Sprite.
+Carga Dinámica: Assets desde assets/ (copiados a build/ post-compile). Soporte para backgrounds tiled (e.g., DrawTextureEx full-screen).
+Editor Integration: Tweak scale/tint/isSheet en inspector – ve cambios realtime (ideal para artist tweaks en proto).
 
-## 🚀 Compilación y Ejecución
 
-Requisitos:
-- CMake
-- raylib (puedes instalarlo con tu gestor de paquetes o desde [raylib.com](https://www.raylib.com/))
-
-Para compilar y ejecutar:
-
-```bash
-chmod +x run.sh
-./run.sh
-```
-
----
+📁 Estructura del Proyecto
+text
 
 ## 📹 Demostración
 
