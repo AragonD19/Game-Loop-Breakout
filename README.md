@@ -135,6 +135,5 @@ struct Animation {
 
 **Video del juego:**
 
-[![Watch the video](https://img.youtube.com/vi/zHB_1_eOeiU/0.jpg)](https://youtu.be/zHB_1_eOeiU)
 
 ---
