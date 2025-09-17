@@ -1,4 +1,4 @@
-//systems.h
+// include/systems.h
 
 #pragma once
 #include "ecs.h"
@@ -12,3 +12,10 @@ void systemBallMovement(ECS& ecs, float dt, int screenWidth, int screenHeight, b
 void systemBallPaddleCollision(ECS& ecs);
 void systemBallBlockCollision(ECS& ecs);
 void systemRender(ECS& ecs);
+
+
+void systemInput(ECS& ecs);
+void systemAI(ECS& ecs, float dt);
+void systemMovement(ECS& ecs, float dt);
+void systemAnimationUpdate(ECS& ecs, float dt);
+void systemRenderSprites(ECS& ecs);

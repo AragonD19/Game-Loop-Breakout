@@ -1,16 +1,17 @@
 // include/Game.h
 #pragma once
 #include <raylib.h>
-#include <vector>
-#include "ecs.h"
-#include "components.h"
-#include "systems.h"
+#include <memory>
+#include "Scene.h"
+#include "scenes/BreakoutScene.h"
+#include "scenes/MenuScene.h"
 #include "editor/Editor.h"
+#include "scenes/AdventureScene.h"
 
 class Game {
 public:
     Game(const char* title, int width, int height);
-    ~Game();  
+    ~Game();
 
     void setup();
     void frame_start();
@@ -24,11 +25,14 @@ public:
 private:
     int screen_width;
     int screen_height;
-    bool isRunning;
+    bool isRunning = true;
     bool paused = false;
-    bool cleaned = false;  
-    ECS ecs;
-    Entity paddle;
-    Entity ball;
-    Editor editor;
+    bool cleaned = false;
+
+    std::unique_ptr<Scene> currentScene;  
+    std::string currentSceneName; 
+
+    void switchScene(const std::string& sceneName);  
+
+    Editor editor;  
 };

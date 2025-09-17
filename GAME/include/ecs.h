@@ -1,9 +1,12 @@
-//esc.h
+// include/esc.h
 
 #pragma once
 #include <unordered_map>
 #include <typeindex>
 #include <type_traits>
+#include <vector>      
+#include <unordered_set> 
+#include "components.h"     
 
 using Entity = size_t;
 
@@ -45,6 +48,26 @@ public:
         return map.find(e) != map.end();
     }
 
+    std::vector<Entity> getAllEntities() {
+        std::unordered_set<Entity> uniqueEntities;
+
+        auto mergeMap = [&](auto& map) {
+            for (auto& [e, _] : map) uniqueEntities.insert(e);
+        };
+        mergeMap(getComponentMap<Position>());
+        mergeMap(getComponentMap<Sprite>());  
+        mergeMap(getComponentMap<InputControlled>());
+        mergeMap(getComponentMap<AIPatrol>());
+
+        return std::vector<Entity>(uniqueEntities.begin(), uniqueEntities.end());
+    }
+
+    
+
 private:
     Entity nextEntity = 0;
+
+    
 };
+
+
